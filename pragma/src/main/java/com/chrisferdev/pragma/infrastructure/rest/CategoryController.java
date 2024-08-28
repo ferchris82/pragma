@@ -27,7 +27,7 @@ public class CategoryController {
 
     @Operation(summary = "Guardar una nueva categoría", description = "Guarda una nueva categoría en el sistema. Si ya existe una categoría con el mismo nombre, lanza una excepción.")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Categoría guardada con éxito",
+            @ApiResponse(responseCode = "201", description = "Categoría guardada con éxito",
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = Category.class))),
             @ApiResponse(responseCode = "409", description = "Ya existe una categoría con ese nombre",
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = ExceptionResponse.class)))
