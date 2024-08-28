@@ -21,6 +21,11 @@ public class CategoryJpaRepositoryImpl implements ICategoryPort {
         if(existsByName(category.getName())){
             throw new IllegalArgumentException();
         }
+
+        if(category.getDescription().trim().isEmpty() || category.getName().trim().isEmpty()){
+            throw new IllegalArgumentException();
+        }
+
         return categoryMapper.toCategory(iCategoryJpaRepository.save(categoryMapper.toCategoryEntity(category)));
     }
 
