@@ -3,6 +3,8 @@ package com.chrisferdev.pragma.infrastructure.adapter;
 
 import com.chrisferdev.pragma.domain.model.Category;
 import com.chrisferdev.pragma.domain.port.ICategoryPort;
+import com.chrisferdev.pragma.infrastructure.exception.CategoryAlreadyExistsException;
+import com.chrisferdev.pragma.infrastructure.exceptionhandler.ExceptionResponse;
 import com.chrisferdev.pragma.infrastructure.mapper.CategoryMapper;
 import org.springframework.stereotype.Repository;
 
@@ -19,11 +21,11 @@ public class CategoryJpaRepositoryImpl implements ICategoryPort {
     @Override
     public Category saveCategory(Category category){
         if(existsByName(category.getName())){
-            throw new IllegalArgumentException();
+            throw new CategoryAlreadyExistsException(ExceptionResponse.CATEGORY_ALREADY_EXISTS.getMessage());
         }
 
         if(category.getDescription().trim().isEmpty() || category.getName().trim().isEmpty()){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(ExceptionResponse.INVALID_CATEGORY.getMessage());
         }
 
         return categoryMapper.toCategory(iCategoryJpaRepository.save(categoryMapper.toCategoryEntity(category)));

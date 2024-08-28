@@ -5,7 +5,7 @@ import lombok.Getter;
 @Getter
 public enum ExceptionResponse {
     CATEGORY_ALREADY_EXISTS("Ya hay una categoría con ese nombre"),
-    INVALID_CATEGORY("El nombre o la descripción de la categoría no puede esta vacía");
+    INVALID_CATEGORY("El nombre o la descripción de la categoría no puede estar vacía");
 
     private String message;
 
