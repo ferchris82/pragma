@@ -1,4 +1,4 @@
-package com.chrisferdev.pragma.infrastructure.exceptionhandler;
+package com.chrisferdev.pragma.infrastructure.exception.exceptionhandler;
 
 import lombok.Getter;
 

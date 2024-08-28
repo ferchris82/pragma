@@ -1,4 +1,4 @@
-package com.chrisferdev.pragma.infrastructure.exceptionhandler;
+package com.chrisferdev.pragma.infrastructure.exception.exceptionhandler;
 
 import com.chrisferdev.pragma.infrastructure.exception.CategoryAlreadyExistsException;
 import org.springframework.http.HttpStatus;
