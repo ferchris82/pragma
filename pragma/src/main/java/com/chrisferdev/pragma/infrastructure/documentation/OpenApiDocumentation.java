@@ -6,8 +6,6 @@ import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-// http://localhost:8084/swagger-ui/index.html
-
 @Configuration
 public class OpenApiDocumentation {
 
@@ -15,16 +13,24 @@ public class OpenApiDocumentation {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("API de Gestión de Categorías")
+                        .title("API de Gestión")
                         .version("1.0")
-                        .description("Documentación de la API para gestionar categorías"));
+                        .description("Documentación de la API para gestionar Controladores"));
     }
 
     @Bean
-    public GroupedOpenApi publicApi() {
+    public GroupedOpenApi categoryApi() {
         return GroupedOpenApi.builder()
-                .group("categorias")
+                .group("categorías")
                 .pathsToMatch("/api/categories/**")
+                .build();
+    }
+
+    @Bean
+    public GroupedOpenApi brandApi() {
+        return GroupedOpenApi.builder()
+                .group("marcas")
+                .pathsToMatch("/api/brands/**")
                 .build();
     }
 }

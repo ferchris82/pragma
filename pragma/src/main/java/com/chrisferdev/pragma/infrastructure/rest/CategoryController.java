@@ -24,7 +24,9 @@ public class CategoryController {
         this.categoryService = categoryService;
     }
 
-    @Operation(summary = "Guardar una nueva categoría", description = "Guarda una nueva categoría en el sistema. Si ya existe una categoría con el mismo nombre, lanza una excepción.")
+    @Operation(
+            summary = "Guardar una nueva categoría",
+            description = "Guarda una nueva categoría en el sistema. Si ya existe una categoría con el mismo nombre, lanza una excepción.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Categoría guardada con éxito",
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = Category.class))),

@@ -1,5 +1,6 @@
 package com.chrisferdev.pragma.infrastructure.exception.exceptionhandler;
 
+import com.chrisferdev.pragma.infrastructure.exception.BrandAlreadyExistsException;
 import com.chrisferdev.pragma.infrastructure.exception.CategoryAlreadyExistsException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +27,13 @@ public class ControllerAdvisor {
             IllegalArgumentException illegalArgumentException) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body(Collections.singletonMap(MESSAGE, ExceptionResponse.INVALID_CATEGORY.getMessage()));
+    }
+
+    @ExceptionHandler(BrandAlreadyExistsException.class)
+    public ResponseEntity<Map<String, String>> handleBrandAlreadyExistsException(
+            BrandAlreadyExistsException brandAlreadyExistsException) {
+        return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body(Collections.singletonMap(MESSAGE, ExceptionResponse.BRAND_ALREADY_EXISTS.getMessage()));
     }
 
 }
