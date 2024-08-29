@@ -13,7 +13,7 @@ import static org.mockito.Mockito.*;
 
 @SpringBootTest
 class
-TestingH3 {
+UseCase3Tests {
     IBrandPort iBrandPort;
     BrandService brandService;
 

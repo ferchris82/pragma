@@ -1,11 +1,9 @@
 package com.chrisferdev.pragma.infrastructure.adapter;
 
 import com.chrisferdev.pragma.domain.model.Brand;
-import com.chrisferdev.pragma.domain.model.Category;
 import com.chrisferdev.pragma.domain.model.PaginatedResult;
 import com.chrisferdev.pragma.domain.port.IBrandPort;
 import com.chrisferdev.pragma.infrastructure.entity.BrandEntity;
-import com.chrisferdev.pragma.infrastructure.entity.CategoryEntity;
 import com.chrisferdev.pragma.infrastructure.exception.BrandAlreadyExistsException;
 import com.chrisferdev.pragma.infrastructure.exception.exceptionhandler.ExceptionResponse;
 import com.chrisferdev.pragma.infrastructure.mapper.BrandMapper;
