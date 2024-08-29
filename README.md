@@ -10,3 +10,13 @@ CRITERIOS DE ACEPTACIÓN :
 -todas las categoria deben tener una descripcion
 -el tamaño maximo del nombre debe ser de 50 caracteres
 -el tamaño maximo de la descripcion debe ser de 90 caracteres
+
+HISTORIA DE USUARIO 2
+
+DESCRIPCIÓN : Listar Categorías
+OBJETIVO : Yo como todos los roles
+necesito listar las categorias
+para poder seleccionar la categoria que mas necesito
+CRITERIOS DE ACEPTACIÓN
+-se debe poder parametrizar si quiero traerme las categorias ordenadas ascendentemente o descendentemente por el nombre
+-este servicio debe estar paginado
