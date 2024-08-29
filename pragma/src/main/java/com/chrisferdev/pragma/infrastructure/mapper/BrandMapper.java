@@ -14,6 +14,8 @@ public interface BrandMapper {
     @Mapping(source = "description", target = "description")
     Brand toBrand(BrandEntity brandEntity);
 
+    Iterable<Brand> toBrandList(Iterable<BrandEntity> brandEntities);
+
     @InheritInverseConfiguration
     BrandEntity toBrandEntity(Brand brand);
 }

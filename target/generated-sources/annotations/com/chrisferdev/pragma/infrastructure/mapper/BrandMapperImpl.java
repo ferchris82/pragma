@@ -2,12 +2,13 @@ package com.chrisferdev.pragma.infrastructure.mapper;
 
 import com.chrisferdev.pragma.domain.model.Brand;
 import com.chrisferdev.pragma.infrastructure.entity.BrandEntity;
+import java.util.ArrayList;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-08-28T16:30:10-0500",
+    date = "2024-08-28T22:21:31-0500",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.6 (Oracle Corporation)"
 )
 @Component
@@ -26,6 +27,20 @@ public class BrandMapperImpl implements BrandMapper {
         brand.setDescription( brandEntity.getDescription() );
 
         return brand;
+    }
+
+    @Override
+    public Iterable<Brand> toBrandList(Iterable<BrandEntity> brandEntities) {
+        if ( brandEntities == null ) {
+            return null;
+        }
+
+        ArrayList<Brand> iterable = new ArrayList<Brand>();
+        for ( BrandEntity brandEntity : brandEntities ) {
+            iterable.add( toBrand( brandEntity ) );
+        }
+
+        return iterable;
     }
 
     @Override

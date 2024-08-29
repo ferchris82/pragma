@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.*;
 
 @SpringBootTest
- class TestingH2 {
+ class UseCase2Tests {
 
     ICategoryPort iCategoryPort;
     CategoryService categoryService;
